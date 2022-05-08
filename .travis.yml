@@ -9,14 +9,14 @@ script:
   - docker run -e CI=true octavianmitu/react-test npm run test -- --coverage
 
 after_success:
-  - docker build -t octavianmitu/multi-client ./client
   - docker build -t octavianmitu/multi-nginx ./nginx
   - docker build -t octavianmitu/multi-server ./server
   - docker build -t octavianmitu/multi-worker ./worker
+  - docker build -t octavianmitu/multi-client ./client
 
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   
-  - docker push octavianmitu/multi-client
   - docker push octavianmitu/multi-nginx
   - docker push octavianmitu/multi-server
   - docker push octavianmitu/multi-worker
+  - docker push octavianmitu/multi-client
