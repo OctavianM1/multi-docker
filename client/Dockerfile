@@ -1,7 +1,7 @@
 FROM node:16-alpine as dev
 
 WORKDIR /app
-COPY package-lock.json package.json ./
+COPY package*.json ./
 RUN npm ci
 COPY . .
 CMD [ "npm", "start" ]
@@ -9,7 +9,7 @@ CMD [ "npm", "start" ]
 
 FROM node:16-alpine as builder
 WORKDIR /app
-COPY --from=dev . .
+COPY --from=dev /app .
 RUN npm run build
 
 FROM nginx
