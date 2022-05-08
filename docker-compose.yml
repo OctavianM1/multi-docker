@@ -6,7 +6,7 @@ services:
     mem_limit: 128m
     hostname: client
 
-  server:
+  api:
     image: "octavianmitu/multi-server"
     mem_limit: 128m
     hostname: api
