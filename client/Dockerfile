@@ -7,9 +7,8 @@ COPY . .
 CMD [ "npm", "start" ]
 
 
-FROM node:16-alpine as builder
+FROM dev as builder
 WORKDIR /app
-COPY --from=dev /app .
 RUN npm run build
 
 FROM nginx
