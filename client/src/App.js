@@ -33,7 +33,7 @@ function App() {
   return (
     <div className="App">
       <form onSubmit={onSubmit}>
-        <p>Enter your value:</p>
+        <p>Enter your value1:</p>
         <input type="number" value={indexInput} onChange={(e) => setIndexInput(e.target.value)} />
         <button type="submit">Submit</button>
       </form>
