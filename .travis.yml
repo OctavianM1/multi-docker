@@ -20,3 +20,16 @@ after_success:
   - docker push octavianmitu/multi-server
   - docker push octavianmitu/multi-worker
   - docker push octavianmitu/multi-client
+
+
+deploy:
+  provider: elasticbeanstalk
+  region: eu-central-1
+  app: multi-docker
+  env: Multidocker-env
+  bucket_name: elasticbeanstalk-eu-central-1-656983766737
+  bucket_path: docker-multi
+  access_key_id: $AWS_ACCESS_ID
+  secret_access_key: $AWS_ACCESS_KEY
+  on:
+    branch: main
