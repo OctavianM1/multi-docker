@@ -33,6 +33,10 @@ app.get('/', (req, res) => {
   res.send('Hi!');
 });
 
+app.get('/healthcheck', (req, res) => {
+  res.send("I'm alive");
+});
+
 app.get('/values/all', async (req, res) => {
   const values = await pgClient.query('SELECT * from values');
   res.send(values.rows);
