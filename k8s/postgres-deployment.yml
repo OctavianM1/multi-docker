@@ -26,10 +26,6 @@ spec:
                 secretKeyRef:
                   key: PGPASSWORD
                   name: pgpassword
-          resources:
-            limits:
-              memory: 128Mi
-              cpu: "1.5"
           volumeMounts:
             - mountPath: /var/lib/postgresql/data
               name: postgres-storage
