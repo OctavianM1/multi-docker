@@ -23,5 +23,5 @@ spec:
           resources:
             limits:
               memory: 128Mi
-              cpu: "0.5" 
+              cpu: "1.5" 
   
